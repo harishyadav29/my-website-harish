@@ -1,0 +1,606 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painless Root Canal Treatment in Delhi | Clove Dental</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; background: #fff; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        /* ========== HEADER ========== */
+        .header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 40px; background: #fff; border-bottom: 1px solid #eee;
+            position: sticky; top: 0; z-index: 100;
+        }
+        .header-logo { font-size: 26px; font-weight: 700; color: #e67e22; font-style: italic; }
+        .header-logo span { color: #333; font-style: normal; }
+        .header-actions { display: flex; gap: 10px; align-items: center; }
+        .btn-appointment {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: #e67e22; color: #fff; border: none; padding: 10px 20px;
+            border-radius: 8px; font-size: 14px; cursor: pointer; font-weight: 600; transition: background 0.2s;
+        }
+        .btn-appointment:hover { background: #d35400; }
+        .btn-phone {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: #fff; color: #333; border: 1px solid #ddd; padding: 10px 20px;
+            border-radius: 8px; font-size: 14px; cursor: pointer;
+        }
+
+        /* ========== HERO ========== */
+        .hero { display: flex; min-height: 420px; }
+        .hero-image {
+            flex: 1; position: relative; overflow: hidden;
+            background: linear-gradient(135deg,#1a8a8a 0%,#2da3a3 40%,#e8d5a0 100%);
+        }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; min-height: 420px; }
+        .hero-overlay {
+            position: absolute; bottom: 28px; left: 28px; color: #fff; z-index: 2; max-width: 380px;
+        }
+        .hero-overlay h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
+        .hero-overlay p { font-size: 13px; margin-bottom: 16px; opacity: 0.9; }
+        .hero-form {
+            width: 360px; min-width: 320px; padding: 28px 24px; background: #fff;
+            display: flex; flex-direction: column; justify-content: center;
+        }
+        .hero-form h2 { font-size: 18px; font-weight: 700; margin-bottom: 4px; color: #222; }
+        .hero-form .form-sub { font-size: 12px; color: #888; margin-bottom: 16px; line-height: 1.5; }
+        .fi {
+            width: 100%; padding: 11px 14px; border: 1px solid #ddd; border-radius: 8px;
+            font-size: 14px; margin-bottom: 10px; outline: none; background: #fafafa;
+        }
+        .fi:focus { border-color: #e67e22; background: #fff; }
+        .captcha-row { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; }
+        .captcha-row .fi { flex: 1; margin-bottom: 0; }
+        .captcha-box {
+            background: #e67e22; color: #fff; padding: 11px 16px; border-radius: 8px;
+            font-weight: 700; font-size: 15px; min-width: 62px; text-align: center; letter-spacing: 2px;
+        }
+        .consent-text { font-size: 11px; color: #aaa; margin-bottom: 12px; line-height: 1.5; }
+        .consent-text a { color: #e67e22; text-decoration: underline; }
+        .btn-book {
+            width: 100%; padding: 13px; background: #e67e22; color: #fff; border: none;
+            border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s;
+        }
+        .btn-book:hover { background: #d35400; }
+
+        /* ========== STATS MARQUEE ========== */
+        .stats-bar {
+            overflow: hidden; border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+            padding: 12px 0; background: #fff;
+        }
+        .stats-track { display: flex; gap: 36px; animation: marquee 22s linear infinite; width: max-content; }
+        @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+        .stat-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+        .stat-icon { width: 22px; height: 22px; opacity: 0.5; }
+        .stat-number { font-weight: 700; font-size: 13px; color: #333; }
+        .stat-label { font-size: 12px; color: #666; }
+
+        /* ========== SECTION WRAPPER ========== */
+        .ps { padding: 48px 40px; }
+        .ps-bg { background: #fafafa; }
+        .si { max-width: 1060px; margin: 0 auto; }
+        .sec-title { text-align: center; font-size: 21px; font-weight: 700; margin-bottom: 6px; color: #222; }
+        .sec-sub { text-align: center; font-size: 13px; color: #888; margin-bottom: 28px; line-height: 1.5; }
+
+        /* ========== TREATMENT CARDS ========== */
+        .treatments-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .treatment-card { display: flex; border: 1px solid #eee; border-radius: 12px; overflow: hidden; }
+        .tc-img { width: 190px; min-width: 190px; overflow: hidden; }
+        .tc-img img { width: 100%; height: 100%; object-fit: cover; }
+        .tc-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+        .tc-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 3px; color: #222; }
+        .tc-body .tc-desc { font-size: 12px; color: #888; margin-bottom: 10px; }
+        .tc-body .tc-label { font-weight: 700; font-size: 12px; margin-bottom: 5px; color: #333; }
+        .tc-body ul { padding-left: 14px; list-style: disc; margin-bottom: 12px; }
+        .tc-body ul li { font-size: 12px; color: #555; margin-bottom: 3px; }
+        .price-label { color: #e67e22; font-size: 11px; font-weight: 600; }
+        .price { font-size: 17px; font-weight: 700; color: #333; margin: 2px 0 10px; }
+        .btn-consult {
+            background: #e67e22; color: #fff; border: none; padding: 9px 18px;
+            border-radius: 8px; font-size: 12px; cursor: pointer; font-weight: 600; width: fit-content;
+            transition: background 0.2s;
+        }
+        .btn-consult:hover { background: #d35400; }
+
+        /* ========== REAL SMILES (4 cards, single row) ========== */
+        .transform-grid {
+            display: grid; grid-template-columns: repeat(4,1fr); gap: 16px;
+        }
+        .t-item { text-align: left; }
+        .t-img-wrap { width: 100%; height: 200px; border-radius: 10px; overflow: hidden; margin-bottom: 8px; }
+        .t-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+        .t-item .t-name { font-size: 13px; font-weight: 600; display: block; color: #222; }
+        .t-item .t-city { font-size: 12px; color: #e67e22; display: block; }
+
+        /* ========== WHY CHOOSE ========== */
+        .why-wrap { display: flex; gap: 40px; align-items: flex-start; }
+        .why-left { flex: 1; }
+        .why-right { width: 320px; min-width: 260px; }
+        .why-right img { border-radius: 12px; width: 100%; height: 340px; object-fit: cover; }
+        .why-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 0; border-bottom: 1px solid #eee; cursor: pointer; user-select: none;
+        }
+        .why-row span { font-size: 14px; color: #333; }
+        .why-row .wp { color: #e67e22; font-size: 22px; font-weight: 300; min-width: 22px; text-align: right; }
+        .why-ans { display: none; padding: 8px 0 12px; font-size: 13px; color: #666; line-height: 1.6; }
+        .why-ans.open { display: block; }
+
+        /* ========== PATIENTS SAY (6 portrait cards, single row) ========== */
+        .patients-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 14px; }
+        .p-item { text-align: left; }
+        .p-img-wrap { width: 100%; aspect-ratio: 3/4; border-radius: 10px; overflow: hidden; margin-bottom: 7px; }
+        .p-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+        /* Name + Treatment on same line */
+        .p-name-row { display: flex; align-items: baseline; gap: 5px; flex-wrap: wrap; margin-bottom: 2px; }
+        .p-item .pn { font-size: 12px; font-weight: 600; color: #222; white-space: nowrap; }
+        .p-item .pt { font-size: 11px; color: #e67e22; white-space: nowrap; }
+        /* City below */
+        .p-item .pc { font-size: 11px; color: #888; display: block; }
+
+        /* ========== BOOKING BAND ========== */
+        /* Figma: beige card — title on top, then single row: Name|Phone|Captcha|[1514]|[Button] */
+        .booking-band {
+            background: #fef9f3; border: 1px solid #f0e0cc; border-radius: 12px; padding: 28px 32px;
+        }
+        .booking-band h2 { font-size: 18px; font-weight: 700; margin-bottom: 18px; color: #222; text-align: center; }
+        .booking-row { display: flex; gap: 10px; align-items: center; }
+        .booking-row .fi { flex: 1; margin-bottom: 0; }
+        .booking-row .btn-book { width: auto; padding: 12px 22px; white-space: nowrap; }
+        .booking-note { font-size: 11px; color: #aaa; margin-top: 10px; text-align: center; }
+        .booking-note a { color: #e67e22; text-decoration: underline; }
+
+        /* ========== SAFETY CARDS (3 equal cols) ========== */
+        .safety-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+        .safety-card { border-radius: 14px; overflow: hidden; position: relative; min-height: 280px; }
+        .safety-card img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
+        .safety-ov {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent 0%,rgba(0,0,0,0.78) 100%);
+            padding: 40px 18px 18px; color: #fff;
+        }
+        .safety-ov h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+        .sbar { width: 70px; height: 3px; border-radius: 2px; margin-bottom: 8px; }
+        .sbar.green { background: #4CAF50; }
+        .sbar.teal  { background: #4ecdc4; }
+        .sbar.blue  { background: #2196F3; }
+        .safety-ov p { font-size: 12px; margin-bottom: 12px; line-height: 1.5; opacity: 0.9; }
+        .lm { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; cursor: pointer; }
+        .lm-circle {
+            width: 20px; height: 20px; border-radius: 50%; background: #e67e22;
+            display: flex; align-items: center; justify-content: center; font-size: 11px; color: #fff; flex-shrink: 0;
+        }
+
+        /* ========== BOTTOM: FORM + PLAN (2 equal cols) ========== */
+        .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
+
+        /* Left: form */
+        .bf-card {
+            background: #fef9f3; border: 1px solid #f0e0cc; border-radius: 12px;
+            padding: 28px 24px; display: flex; flex-direction: column; justify-content: center;
+        }
+        .bf-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 4px; color: #222; }
+        .bf-card .bf-sub { font-size: 12px; color: #888; margin-bottom: 16px; line-height: 1.5; }
+        .bf-card .fi { margin-bottom: 10px; }
+
+        /* Right: plan card — left half orange, right half white */
+        .plan-card { display: flex; border: 1px solid #eee; border-radius: 12px; overflow: hidden; }
+        .plan-orange {
+            width: 46%; min-height: 280px;
+            position: relative; overflow: hidden; flex-shrink: 0;
+            border-radius: 12px 0 0 12px;
+        }
+        .plan-orange img {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: center;
+            display: block;
+        }
+        .plan-orange .badge {
+            font-size: 9px; background: #fff; color: #e67e22; padding: 3px 8px;
+            border-radius: 10px; display: inline-block; margin-bottom: 8px; font-weight: 700; width: fit-content;
+        }
+        .plan-orange h3 { font-size: 12px; font-weight: 800; margin-bottom: 3px; line-height: 1.3; }
+        .plan-orange .po-sub { font-size: 9px; opacity: 0.9; margin-bottom: 8px; }
+        .plan-orange .po-ml { font-size: 10px; font-weight: 600; opacity: 0.9; }
+        .plan-orange .po-only { font-size: 9px; opacity: 0.85; }
+        .plan-orange .po-price { font-size: 28px; font-weight: 800; line-height: 1; margin: 2px 0 6px; }
+        .plan-orange .po-note { font-size: 9px; opacity: 0.8; margin-bottom: 8px; }
+        .plan-orange .po-bl { font-size: 9px; opacity: 0.85; }
+        .plan-orange .po-ba { font-size: 18px; font-weight: 800; line-height: 1.1; }
+        .plan-orange .po-bs { font-size: 9px; opacity: 0.8; }
+        .plan-orange .po-img { position: absolute; right: -6px; bottom: 0; width: 85px; opacity: 0.93; }
+        .plan-white { flex: 1; padding: 16px 14px; display: flex; flex-direction: column; justify-content: center; }
+        .plan-white h4 { font-size: 13px; font-weight: 700; margin-bottom: 10px; color: #222; line-height: 1.4; }
+        .plan-white ul { list-style: disc; padding-left: 14px; margin-bottom: 12px; }
+        .plan-white ul li { font-size: 11px; color: #555; margin-bottom: 5px; line-height: 1.5; }
+        .plan-white .pw-offer { color: #e67e22; font-size: 11px; font-weight: 600; margin-bottom: 4px; }
+        .plan-white .pw-price { font-size: 15px; font-weight: 700; color: #333; margin-bottom: 10px; }
+        .plan-white .pw-price .pw-old { text-decoration: line-through; color: #bbb; font-size: 13px; margin-left: 6px; font-weight: 400; }
+        .btn-buy {
+            background: #e67e22; color: #fff; border: none; padding: 9px 22px;
+            border-radius: 8px; font-size: 12px; cursor: pointer; font-weight: 600;
+            width: fit-content; transition: background 0.2s;
+        }
+        .btn-buy:hover { background: #d35400; }
+
+        /* ========== FAQ (2 cols, stacked rows) ========== */
+        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+        .faq-col { }
+        .faq-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 14px 0; border-bottom: 1px solid #eee; cursor: pointer; user-select: none;
+        }
+        .faq-row span { font-size: 13px; color: #333; padding-right: 8px; }
+        .faq-plus { color: #e67e22; font-size: 20px; font-weight: 300; min-width: 16px; text-align: right; }
+        .faq-ans { display: none; padding: 8px 0 12px; font-size: 12px; color: #666; line-height: 1.6; }
+        .faq-ans.open { display: block; }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: #3b2314; color: #fff; padding: 22px 40px;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+        }
+        .footer-logo { font-size: 24px; font-weight: 700; font-style: italic; }
+        .footer-logo span { font-style: normal; font-weight: 400; }
+        .footer-dental { font-size: 10px; letter-spacing: 4px; color: #ccc; margin-top: 2px; }
+        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+        .footer-links a { color: #ccc; font-size: 13px; }
+        .footer-links a:hover { color: #e67e22; }
+        .footer-copy {
+            background: #3b2314; border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 11px; color: #888; text-align: center; padding: 10px 40px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .transform-grid { grid-template-columns: repeat(2,1fr); }
+            .patients-grid { grid-template-columns: repeat(3,1fr); }
+            .bottom-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .header { padding: 10px 20px; }
+            .ps { padding: 32px 20px; }
+            .hero { flex-direction: column; }
+            .hero-form { width: 100%; min-width: auto; }
+            .hero-image img { min-height: 260px; }
+            .treatments-grid { grid-template-columns: 1fr; }
+            .treatment-card { flex-direction: column; }
+            .tc-img { width: 100%; min-width: auto; height: 180px; }
+            .why-wrap { flex-direction: column; }
+            .why-right { width: 100%; }
+            .why-right img { height: 220px; }
+            .transform-grid { grid-template-columns: repeat(2,1fr); }
+            .patients-grid { grid-template-columns: repeat(3,1fr); }
+            .safety-grid { grid-template-columns: 1fr; }
+            .faq-grid { grid-template-columns: 1fr; }
+            .plan-card { flex-direction: column; }
+            .plan-orange { width: 100%; min-height: 220px; border-radius: 12px 12px 0 0; }
+            .booking-row { flex-wrap: wrap; }
+            .booking-row .btn-book { width: 100%; }
+            .footer { flex-direction: column; align-items: flex-start; }
+            .footer-links { flex-direction: column; gap: 8px; }
+        }
+        @media (max-width: 480px) {
+            .btn-appointment, .btn-phone { padding: 8px 12px; font-size: 12px; }
+            .transform-grid { grid-template-columns: 1fr; }
+            .patients-grid { grid-template-columns: repeat(2,1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header-logo">clove<span>:)</span></div>
+    <div class="header-actions">
+        <button class="btn-appointment">&#128197; Book Appointment</button>
+        <button class="btn-phone">&#128222; 985-6589-510</button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-image">
+        <img src="1.jpeg" alt="Dentist">
+        <div class="hero-overlay">
+            
+        </div>
+    </div>
+    <div class="hero-form">
+        <h2>Get Expert Dental Guidance in Delhi</h2>
+        <p class="form-sub">Book your free consultation today and take the first step towards healthy, beautiful teeth.</p>
+        <input class="fi" type="text" placeholder="Name">
+        <input class="fi" type="text" placeholder="Mobile Number">
+        <div class="captcha-row">
+            <input class="fi" type="text" placeholder="Captcha">
+            <div class="captcha-box">1514</div>
+        </div>
+        <p class="consent-text">I agree to CLOVE Dental's <a href="#">Terms</a> and <a href="#">Privacy Policy</a> and consent to contact via phone, email, or SMS.</p>
+        <button class="btn-book">Book a Free Consultation</button>
+    </div>
+</section>
+
+<!-- STATS MARQUEE -->
+<div class="stats-bar">
+    <div class="stats-track">
+        <div class="stat-item"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5"><path d="M12 2C8 2 6 6 6 10c0 2 .5 3.5 1.5 4.5L12 22l4.5-7.5C17.5 13.5 18 12 18 10c0-4-2-8-6-8z"/></svg><span class="stat-number">600+</span><span class="stat-label">Clinics</span></div>
+        <div class="stat-item"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg><span class="stat-number">1300+</span><span class="stat-label">Dentists</span></div>
+        <div class="stat-item"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><circle cx="9" cy="9" r="1" fill="#999"/><circle cx="15" cy="9" r="1" fill="#999"/></svg><span class="stat-number">30 L+</span><span class="stat-label">Happy Patients</span></div>
+        <div class="stat-item"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5"><path d="M12 2C8 2 6 6 6 10c0 2 .5 3.5 1.5 4.5L12 22l4.5-7.5C17.5 13.5 18 12 18 10c0-4-2-8-6-8z"/></svg><span class="stat-number">35K+</span><span class="stat-label">Ortho Cases</span></div>
+        <div class="stat-item"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M8 8V6a4 4 0 018 0v2"/></svg><span class="stat-number">55K+</span><span class="stat-label">Implants Placed</span></div>
+        <div class="stat-item"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5"><path d="M12 2C8 2 6 6 6 10c0 2 .5 3.5 1.5 4.5L12 22l4.5-7.5C17.5 13.5 18 12 18 10c0-4-2-8-6-8z"/></svg><span class="stat-number">600+</span><span class="stat-label">Clinics</span></div>
+        <div class="stat-item"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg><span class="stat-number">1300+</span><span class="stat-label">Dentists</span></div>
+        <div class="stat-item"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><circle cx="9" cy="9" r="1" fill="#999"/><circle cx="15" cy="9" r="1" fill="#999"/></svg><span class="stat-number">30 L+</span><span class="stat-label">Happy Patients</span></div>
+        <div class="stat-item"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5"><path d="M12 2C8 2 6 6 6 10c0 2 .5 3.5 1.5 4.5L12 22l4.5-7.5C17.5 13.5 18 12 18 10c0-4-2-8-6-8z"/></svg><span class="stat-number">35K+</span><span class="stat-label">Ortho Cases</span></div>
+        <div class="stat-item"><svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M8 8V6a4 4 0 018 0v2"/></svg><span class="stat-number">55K+</span><span class="stat-label">Implants Placed</span></div>
+    </div>
+</div>
+
+<!-- TYPES OF ROOT CANAL TREATMENTS -->
+<section class="ps">
+    <div class="si">
+        <h2 class="sec-title">Types of Root Canal Treatments</h2>
+        <p class="sec-sub">In a root canal, the dentist removes infected pulp, cleans the tooth, and fills it with special material.</p>
+        <div class="treatments-grid">
+            <div class="treatment-card">
+                <div class="tc-img"><img src="2.jpeg" alt="Root Canal Treatment"></div>
+                <div class="tc-body">
+                    <h3>Root Canal Treatment</h3>
+                    <p class="tc-desc">Ideal for infected or damaged tooth</p>
+                    <p class="tc-label">Types of RCT</p>
+                    <ul><li>Root Canal Treatment</li><li>Split RCT</li><li>Split RCT with rubber dam</li><li>Split RCT with laser</li></ul>
+                    <p class="price-label">Starting Price</p>
+                    <p class="price">&#8377; 19,999</p>
+                    <button class="btn-consult">Get Free Consultation</button>
+                </div>
+            </div>
+            <div class="treatment-card">
+                <div class="tc-img"><img src="3.jpeg" alt="Re-Root Canal Treatment"></div>
+                <div class="tc-body">
+                    <h3>Re-Root Canal Treatment</h3>
+                    <p class="tc-desc">Ideal issues that persist or recur after an initial root canal treatment</p>
+                    <p class="tc-label">Types of RCT</p>
+                    <ul><li>Re-RCT with rubber dam</li><li>Re-RCT laser specialist</li><li>e-RCT with retrieval of old RCT filling</li></ul>
+                    <p class="price-label">Starting Price</p>
+                    <p class="price">&#8377; 19,999</p>
+                    <button class="btn-consult">Get Free Consultation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REAL SMILES — 4 cards in one row -->
+<section class="ps ps-bg">
+    <div class="si">
+        <h2 class="sec-title">Real Smiles, Real Transformations</h2>
+        <p class="sec-sub">See the life-changing results our dental implant patients enjoy</p>
+        <div class="transform-grid">
+            <div class="t-item"><div class="t-img-wrap"><img src="4.jpeg" alt="Arjun Mehta"></div><span class="t-name">Arjun Mehta</span><span class="t-city">Mumbai</span></div>
+            <div class="t-item"><div class="t-img-wrap"><img src="5.jpeg" alt="Kavita Sharma"></div><span class="t-name">Kavita Sharma</span><span class="t-city">Bangalore</span></div>
+            <div class="t-item"><div class="t-img-wrap"><img src="6.jpeg" alt="Neha Joshi"></div><span class="t-name">Neha Joshi</span><span class="t-city">Delhi</span></div>
+            <div class="t-item"><div class="t-img-wrap"><img src="7.jpeg" alt="Viram Desai"></div><span class="t-name">Viram Desai</span><span class="t-city">Chennai</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE CLOVE DENTAL -->
+<section class="ps">
+    <div class="si">
+        <h2 class="sec-title">Why Choose Clove Dental</h2>
+        <p class="sec-sub">Clove Dental is India's Leading dental care brand with 600+ clinic nationwide</p>
+        <div class="why-wrap">
+            <div class="why-left">
+                <div class="why-row" onclick="toggleWhy(this)"><span>DORI - A.I. enabled Dental chair</span><span class="wp">+</span></div>
+                <div class="why-ans">DORI is Clove Dental's proprietary AI-powered dental chair that enhances precision and patient comfort during all dental procedures.</div>
+                <div class="why-row" onclick="toggleWhy(this)"><span>10x Safety and 4 steps sterilization process</span><span class="wp">+</span></div>
+                <div class="why-ans">Our rigorous 4-step sterilization process ensures 10x safety compared to standard protocols, keeping you protected at every visit.</div>
+                <div class="why-row" onclick="toggleWhy(this)"><span>Experienced and Certified implantologist</span><span class="wp">+</span></div>
+                <div class="why-ans">Our team of certified implantologists brings years of experience and specialized training to deliver the best dental implant outcomes.</div>
+                <div class="why-row" onclick="toggleWhy(this)"><span>Updated with world class equipments</span><span class="wp">+</span></div>
+                <div class="why-ans">We continuously update our clinics with the latest world-class equipment to provide the most advanced dental care available.</div>
+                <div class="why-row" onclick="toggleWhy(this)"><span>Regular audits for safety protocols</span><span class="wp">+</span></div>
+                <div class="why-ans">Regular internal and external audits ensure all safety protocols are consistently maintained at the highest standards.</div>
+            </div>
+            <div class="why-right">
+                <img src="8.jpeg" alt="Clove Dental Team">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT OUR PATIENTS SAY — 6 portrait cards in one row -->
+<section class="ps ps-bg">
+    <div class="si">
+        <h2 class="sec-title">What Our Patients Say</h2>
+        <p class="sec-sub">Real smiles, real stories. Here's what our patients love about their CLOVE Dental experience!</p>
+        <div class="patients-grid">
+            <div class="p-item">
+                <div class="p-img-wrap"><img src="9.jpeg" alt="Shubham"></div>
+                <div class="p-name-row"><span class="pn">Shubham</span><span class="pt">Aligners</span></div>
+                <span class="pc">Indore</span>
+            </div>
+            <div class="p-item">
+                <div class="p-img-wrap"><img src="10.jpeg" alt="Shubpreet"></div>
+                <div class="p-name-row"><span class="pn">Shubpreet</span><span class="pt">RCT</span></div>
+                <span class="pc">Indore</span>
+            </div>
+            <div class="p-item">
+                <div class="p-img-wrap"><img src="11.jpeg" alt="Anita"></div>
+                <div class="p-name-row"><span class="pn">Anita</span><span class="pt">Laser Treatment</span></div>
+                <span class="pc">Banglore</span>
+            </div>
+            <div class="p-item">
+                <div class="p-img-wrap"><img src="12.jpeg" alt="Aarti"></div>
+                <div class="p-name-row"><span class="pn">Aarti</span><span class="pt">Dentures</span></div>
+                <span class="pc">Indore</span>
+            </div>
+            <div class="p-item">
+                <div class="p-img-wrap"><img src="13.jpeg" alt="Aditya"></div>
+                <div class="p-name-row"><span class="pn">Aditya</span><span class="pt">Implant</span></div>
+                <span class="pc">Indore</span>
+            </div>
+            <div class="p-item">
+                <div class="p-img-wrap"><img src="14.jpeg" alt="Nikita"></div>
+                <div class="p-name-row"><span class="pn">Nikita</span></div>
+                <span class="pc">Indore</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BOOK APPOINTMENT BAND -->
+<!-- Figma: beige card — Name | Phone | Captcha | [1514] | [Book Free Consultation] -->
+<section class="ps">
+    <div class="si">
+        <div class="booking-band">
+            <h2>Book an Appointment With Clove Dentist in Delhi</h2>
+            <div class="booking-row">
+                <input class="fi" type="text" placeholder="Name">
+                <input class="fi" type="text" placeholder="Phone">
+                <input class="fi" type="text" placeholder="Captcha">
+                <div class="captcha-box">1514</div>
+                <button class="btn-book">Book Free Consultation</button>
+            </div>
+            <p class="booking-note">I agree to CLOVE Dental's <a href="#">Terms</a> and <a href="#">Privacy Policy</a> and consent to contact via phone, email, or SMS.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SAFETY, PRECISION & INNOVATION — 3 equal image cards -->
+<section class="ps ps-bg">
+    <div class="si">
+        <h2 class="sec-title">Safety, Precision, and Innovation</h2>
+        <p class="sec-sub">Advanced care with top safety, sterilization, and technology</p>
+        <div class="safety-grid">
+            <div class="safety-card">
+                <img src="15.jpeg" alt="Uncompromised Safety">
+                <div class="safety-ov">
+                   
+                </div>
+            </div>
+            <div class="safety-card">
+                <img src="16.jpeg" alt="Assuring Cleanliness">
+                <div class="safety-ov">
+                   
+                </div>
+            </div>
+            <div class="safety-card">
+                <img src="17.jpeg" alt="Experience AIPS">
+                <div class="safety-ov">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BOTTOM: FORM (left) + PLAN CARD (right) -->
+<section class="ps">
+    <div class="si">
+        <div class="bottom-grid">
+            <!-- Form -->
+            <div class="bf-card">
+                <h3>Expert Guidance for Healthy Smiles</h3>
+                <p class="bf-sub">Book your free consultation today and take the first step towards healthy, beautiful teeth.</p>
+                <input class="fi" type="text" placeholder="Name">
+                <input class="fi" type="text" placeholder="Mobile Number">
+                <p class="consent-text">I agree to CLOVE Dental's <a href="#">Terms</a> and <a href="#">Privacy Policy</a> and consent to contact via phone, email, or SMS.</p>
+                <button class="btn-book">Book a Free Consultation</button>
+            </div>
+            <!-- Plan card -->
+            <div class="plan-card">
+                <div class="plan-orange">
+                    <img src="21.jpeg" alt="Clove Dental Plan">
+                </div>
+                <div class="plan-white">
+                    <h4>Dental Health Plan - Anniversary Plan</h4>
+                    <ul>
+                        <li>&#8377;1,700 treatment voucher redeemable against any dental procedure.</li>
+                        <li>&#8377;1,000 additional voucher for any treatment (Only one voucher can be used per bill).</li>
+                        <li>Unlimited dental consultations and 2D X-rays for an entire year.</li>
+                    </ul>
+                    <p class="pw-offer">Special Offer</p>
+                    <p class="pw-price">&#8377; 399 <span class="pw-old">&#8377;5100</span></p>
+                    <button class="btn-buy">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ — 2-column layout -->
+<section class="ps ps-bg">
+    <div class="si">
+        <h2 class="sec-title">Frequently Asked Questions</h2>
+        <br>
+        <div class="faq-grid">
+            <div class="faq-col">
+                <div class="faq-row" onclick="toggleFaq(this)"><span>Can i choose the dentist on my own for treatment ?</span><span class="faq-plus">+</span></div>
+                <div class="faq-ans">Yes, you can choose your preferred dentist based on availability at your nearest Clove Dental clinic.</div>
+                <div class="faq-row" onclick="toggleFaq(this)"><span>Will i get the same doctor each time i visit the same clinic ?</span><span class="faq-plus">+</span></div>
+                <div class="faq-ans">We try our best to ensure continuity of care with the same doctor for your ongoing treatments.</div>
+                <div class="faq-row" onclick="toggleFaq(this)"><span>How you are able to provide less prices than other dental brands ?</span><span class="faq-plus">+</span></div>
+                <div class="faq-ans">Our large network of 600+ clinics allows us to achieve economies of scale, which we pass on as savings to our patients.</div>
+                <div class="faq-row" onclick="toggleFaq(this)"><span>How you are able to provide less prices than other dental brands ?</span><span class="faq-plus">+</span></div>
+                <div class="faq-ans">Our large network and efficient operations help us keep costs low while maintaining the highest quality standards.</div>
+            </div>
+            <div class="faq-col">
+                <div class="faq-row" onclick="toggleFaq(this)"><span>What are your dental clinic timings?</span><span class="faq-plus">+</span></div>
+                <div class="faq-ans">Our clinics are open from 9:00 AM to 9:00 PM, seven days a week, including holidays.</div>
+                <div class="faq-row" onclick="toggleFaq(this)"><span>How can I book an appointment?</span><span class="faq-plus">+</span></div>
+                <div class="faq-ans">You can book an appointment through our website, call us, or visit any of our 600+ clinics directly.</div>
+                <div class="faq-row" onclick="toggleFaq(this)"><span>How frequently should I visit a dentist?</span><span class="faq-plus">+</span></div>
+                <div class="faq-ans">It is recommended to visit a dentist every 6 months for a regular check-up and cleaning.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div>
+        <div class="footer-logo">clove<span>:)</span></div>
+        <div class="footer-dental">DENTAL</div>
+    </div>
+    <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of service</a>
+        <a href="#">Accessibility</a>
+    </div>
+</footer>
+<div class="footer-copy">All Rights Reserved - 2024, Clove Dental (a brand name of M/s. 5Star Dental Centre Private Limited). Managed By Unbound</div>
+
+<script>
+    function toggleFaq(row) {
+        const plus = row.querySelector('.faq-plus');
+        const ans  = row.nextElementSibling;
+        if (ans && ans.classList.contains('faq-ans')) {
+            ans.classList.toggle('open');
+            plus.textContent = ans.classList.contains('open') ? '−' : '+';
+        }
+    }
+    function toggleWhy(row) {
+        const plus = row.querySelector('.wp');
+        const ans  = row.nextElementSibling;
+        if (ans && ans.classList.contains('why-ans')) {
+            ans.classList.toggle('open');
+            plus.textContent = ans.classList.contains('open') ? '−' : '+';
+        }
+    }
+    document.querySelectorAll('.btn-appointment').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelector('.hero-form').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+</body>
+</html>
